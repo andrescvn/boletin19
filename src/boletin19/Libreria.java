@@ -6,6 +6,7 @@
 package boletin19;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
@@ -16,25 +17,24 @@ import operacions.calculos;
  * @author acomesanavila
  */
 public class Libreria {
-    
+
     private List<Libro> Libreria = new ArrayList<Libro>();
-    
+
     public void engadirLibro() {
         System.out.println("Dame:\nTitulo\nAutor\nISBN\nPrezo\nUnidades");
         Libreria.add(new Libro(calculos.pedirString(), calculos.pedirString(), calculos.pedirString(), calculos.pedirFloat(), calculos.pedirInt()));
     }
-    
+
     public void vender(String nombre, int vendidos) {
         Libro li = new Libro(nombre, "aa", "bb", 10, 9);
         for (Libro l : Libreria) {
             if (li.compareTo(l) == 0) {
-                l.setUnidades(l.getUnidades()-vendidos);
-            }
-            else
-            System.out.println("No existe");
+                l.setUnidades(l.getUnidades() - vendidos);
+                break;
             }
         }
-        
+    }
+
     public void amosarLibros() {
         Collections.sort(Libreria);
         Iterator<Libro> it = Libreria.iterator();
@@ -42,7 +42,7 @@ public class Libreria {
             System.out.println(it.next());
         }
     }
-    
+
     public void comparar() {
         Libro li = new Libro(calculos.pedirString(), "aa", "bb", 10, 9);
         for (Libro l : Libreria) {
@@ -51,13 +51,12 @@ public class Libreria {
             }
         }
     }
-    
+
     public void eliminar0() {
-        for(int i = 0; i<Libreria.size(); i++){
-            if(Libreria.get(i).getUnidades()==0){
+        for (int i = 0; i < Libreria.size(); i++) {
+            if (Libreria.get(i).getUnidades() == 0) {
                 Libreria.remove(i);
             }
         }
-        
     }
 }

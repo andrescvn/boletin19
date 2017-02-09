@@ -71,45 +71,28 @@ public class Libro implements Comparable {
     public int compareTo(Object o) {
         Libro li = (Libro) o;
         if (this.titulo.compareToIgnoreCase(li.titulo) == 0) {
-            return 0;    
+            return 0;
         } else if (this.titulo.compareToIgnoreCase(li.titulo) > 0) {
             return 1;
         } else {
             return -1;
         }
     }
-    
+
+    public int compareTo2(Object o) {
+        Libro li = (Libro) o;
+        if (this.ISBN.compareToIgnoreCase(li.ISBN) == 0) {
+            return 0;
+        } else if (this.ISBN.compareToIgnoreCase(li.ISBN) > 0) {
+            return 1;
+        } else {
+            return -1;
+        }
+    }
 
     @Override
     public String toString() {
         return "Libro{" + "titulo=" + titulo + ", autor=" + autor + ", ISBN=" + ISBN + ", prezo=" + prezo + ", unidades=" + unidades + '}';
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 29 * hash + this.unidades;
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Libro other = (Libro) obj;
-        if (this.unidades != other.unidades) {
-            return false;
-        }
-        return true;
-    }
-
-
-    
 }
