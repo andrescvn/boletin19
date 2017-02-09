@@ -79,17 +79,6 @@ public class Libro implements Comparable {
         }
     }
 
-    public int compareTo2(Object o) {
-        Libro li = (Libro) o;
-        if (this.ISBN.compareToIgnoreCase(li.ISBN) == 0) {
-            return 0;
-        } else if (this.ISBN.compareToIgnoreCase(li.ISBN) > 0) {
-            return 1;
-        } else {
-            return -1;
-        }
-    }
-
     @Override
     public String toString() {
         return "Libro{" + "titulo=" + titulo + ", autor=" + autor + ", ISBN=" + ISBN + ", prezo=" + prezo + ", unidades=" + unidades + '}';
