@@ -29,9 +29,11 @@ public class Libreria {
             if (li.compareTo(l) == 0) {
                 l.setUnidades(l.getUnidades()-vendidos);
             }
+            else
+            System.out.println("No existe");
+            }
         }
-    }
-    
+        
     public void amosarLibros() {
         Collections.sort(Libreria);
         Iterator<Libro> it = Libreria.iterator();
