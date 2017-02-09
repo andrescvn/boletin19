@@ -30,7 +30,6 @@ public class Libreria {
         for (Libro l : Libreria) {
             if (li.compareTo(l) == 0) {
                 l.setUnidades(l.getUnidades() - vendidos);
-                break;
             }
         }
     }
