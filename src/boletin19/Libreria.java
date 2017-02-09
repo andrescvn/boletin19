@@ -20,6 +20,7 @@ public class Libreria {
     private List<Libro> Libreria = new ArrayList<Libro>();
     
     public void engadirLibro() {
+        System.out.println("Dame:\nTitulo\nAutor\nISBN\nPrezo\nUnidades");
         Libreria.add(new Libro(calculos.pedirString(), calculos.pedirString(), calculos.pedirString(), calculos.pedirFloat(), calculos.pedirInt()));
     }
     
